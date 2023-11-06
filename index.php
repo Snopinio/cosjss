@@ -6,7 +6,7 @@
     <title>Sklep</title>
 </head>
 <body>
-    <pre>
+    
     <?php
         //host, login, haslo, nazwa_bazy
     $db = new mysqli('localhost', 'root', '','elo');
@@ -19,7 +19,9 @@
 
     //wyciagaj w petli wiersz po wierszu
     while($row = $result->fetch_assoc()) {
-    var_dump($row);
+    $name = $row['name'];
+    $price = $row['price'];
+    echo "$name za $price zł <br>";
      }
 
     $db->close();
